@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BillBuddies.Record"
+             Title="Record">
+    <ScrollView>
+        <VerticalStackLayout>
+            <!--<Label
+               x:Name="displayRecord"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"/>-->
+            <CollectionView x:Name="displayRecord" ItemsSource="{Binding DateRecorded}">
+                <CollectionView.Header>
+                    <Grid ColumnDefinitions="8* , 8* , 10* , 8*, 10*">
+                        <Label Grid.Column="0" Text="Date"  FontAttributes="Bold" Padding="5" BackgroundColor="Aquamarine"/>
+                        <Label Grid.Column="1" Text="Name"  FontAttributes="Bold" Padding="5" BackgroundColor="Aquamarine"/>
+                        <Label Grid.Column="2" Text="Description"  FontAttributes="Bold" Padding="5" BackgroundColor="Aquamarine"/>
+                        <Label Grid.Column="3" Text="Total Amount"  FontAttributes="Bold" Padding="5" BackgroundColor="Aquamarine" />
+                        <Label Grid.Column="4" Text="Splitting Method"  FontAttributes="Bold" Padding="5" BackgroundColor="Aquamarine" />
+                    </Grid>
+                </CollectionView.Header>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <SwipeView>
+                            <Grid ColumnDefinitions="8* , 8* , 10* , 10*, 10*">
+                                <Label Grid.Column="0" Text="{Binding DateRecorded}"  />
+                                <Label Grid.Column="1" Text="{Binding PersonName}"  />
+                                <Label Grid.Column="2" Text="{Binding Description}"  />
+                                <Label Grid.Column="3" Text="{Binding TotalAmount}"  />
+                                <Label Grid.Column="4" Text="{Binding SplittingMethod}"  />
+                            </Grid>
+                        </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BillBuddies.About"
+             Title="About">
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="150">
+            <!-- Main Content -->
+            <StackLayout>
+                <Label Text="Bill Buddies is your go-to app for managing group finances, ensuring everyone stays informed about shared costs and balances during trips, group activities and outings."
+                       VerticalOptions="Start" 
+                       HorizontalOptions="FillAndExpand" 
+                       HorizontalTextAlignment="Center"/>
+            </StackLayout>
+
+            <!-- Spacer that expands to push the footer to the bottom -->
+            <BoxView VerticalOptions="FillAndExpand" />
+
+            <!-- Footer -->
+            <StackLayout VerticalOptions="End" HorizontalOptions="FillAndExpand">
+                <Label Text="Made by Hasbe Zuliyana SWD0181167"
+                       HorizontalTextAlignment="Center"/>
+                <Label Text="Copyright © 2024 Bill Buddies, Inc."
+                       HorizontalTextAlignment="Center"/>
+                <Label Text="Mobile Application Development"
+                       HorizontalTextAlignment="Center"/>
+            </StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

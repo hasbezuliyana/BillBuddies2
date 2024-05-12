@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="BillBuddies.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:BillBuddies"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.BackgroundColor="CadetBlue"  
+    Shell.TitleColor="White"
+    Shell.TabBarBackgroundColor="CadetBlue"
+    Shell.TabBarTitleColor="Black"
+    Shell.TabBarUnselectedColor="DarkBlue" 
+    Title="BillBuddies">
+
+    <TabBar>
+        <Tab Title="Main Page" Icon="home.png">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
+        </Tab>
+        <Tab Title="Record" Icon="document.png">
+            <ShellContent ContentTemplate="{DataTemplate local:Record}" Route="Record" />
+        </Tab>
+        <Tab Title="Information" Icon="list.png">
+            <ShellContent ContentTemplate="{DataTemplate local:Information}" Route="Information" />
+        </Tab>
+        <Tab Title="About" Icon="info.png">
+            <ShellContent ContentTemplate="{DataTemplate local:About}" Route="About" />
+        </Tab>
+    </TabBar>
+
+</Shell>

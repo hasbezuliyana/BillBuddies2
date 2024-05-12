@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BillBuddies.MainPage"
+             Title="Main Page">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="40,0" Spacing="25">
+
+            <StackLayout>
+                <Label Text="Name"/>
+                <Entry x:Name="inputPersonName" Placeholder="Enter the name" />
+
+                <Label Text="Description" />
+                <Entry x:Name="inputSplitName" Placeholder="Enter a description"/>
+
+                <Label Text="Amount" />
+                <Entry x:Name="inputAmount" Placeholder="Enter the amount in RM" Keyboard="Numeric"/>
+
+                <Picker x:Name="pickerSplitMethod" Title="How was this expense split?" SelectedIndexChanged="OnSplitMethodChanged">
+                    <Picker.Items>
+                        <x:String>You paid, split equally.</x:String>
+                        <x:String>You are owed the full amount.</x:String>
+                        <x:String>They paid, split equally.</x:String>
+                        <x:String>They are owed the full amount.</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+
+            <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="SpaceEvenly">
+                <Button x:Name="calculateButton" Text="Add" VerticalOptions="CenterAndExpand" HeightRequest="60" WidthRequest="110" BackgroundColor="Green" TextColor="White" Clicked="OnAddExpenseClicked"/>
+                <Button x:Name="resetButton" Text="Reset" VerticalOptions="CenterAndExpand" HeightRequest="60" WidthRequest="110" BackgroundColor="DarkRed" TextColor="White" Clicked="OnReset"/>
+            </FlexLayout>
+
+            <StackLayout HorizontalOptions="Center">
+                <Label Text="Name:" HorizontalTextAlignment="Center"/>
+                <Label Text="{Binding Text, Source={x:Reference inputPersonName}}" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+
+                <Label Text="Description:" HorizontalTextAlignment="Center"/>
+                <Label Text="{Binding Text, Source={x:Reference inputSplitName}}" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+
+                <Label Text="Total Amount:" HorizontalTextAlignment="Center"/>
+                <Label x:Name="outputResult" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+
+                <Label Text="Status:" HorizontalTextAlignment="Center"/>
+                <Label x:Name="outputStatus" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+            </StackLayout>
+
+            <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="SpaceEvenly">
+                <ImageButton Source="calendaricon.png"  WidthRequest="50" HeightRequest="50" IsVisible="true" HorizontalOptions="End"/>
+                <!-- <Label Text="Choose a date" HorizontalTextAlignment="Start" /> -->
+                <DatePicker x:Name="selectDate" DateSelected="onDatePickerSelected" Format="dd/MM/yyyy" WidthRequest="70" HeightRequest="50" HorizontalOptions="Start"  />
+            </FlexLayout>
+
+            <StackLayout HorizontalOptions="FillAndExpand">
+                <Button x:Name="saveButton" Text="Save" VerticalOptions="CenterAndExpand" BackgroundColor="LightSlateGrey" TextColor="White" Clicked="OnSaveRecord"/>
+            </StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
