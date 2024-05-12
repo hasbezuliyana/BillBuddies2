@@ -5,7 +5,7 @@
              Title="Information">
     <VerticalStackLayout>
         <Label 
-            Text="Information"
+            Text="Information adli suruh tukar"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
     </VerticalStackLayout>
