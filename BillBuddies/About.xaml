@@ -25,7 +25,7 @@
             <!-- Footer content -->
             <StackLayout VerticalOptions="End" HorizontalOptions="FillAndExpand">
                 <Label 
-                    Text="Developed by Hasbe Zuliyana SW0181167"
+                    Text="Developed by Hasbe Zuliyana SW01081167"
                     HorizontalTextAlignment="Center"
                     FontAttributes="Bold"/>
 
