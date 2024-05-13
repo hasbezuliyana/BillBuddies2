@@ -1,4 +1,6 @@
-﻿namespace BillBuddies
+﻿using System.Globalization;
+
+namespace BillBuddies
 {
     public partial class MainPage : ContentPage
     {
@@ -101,28 +103,34 @@
             var totalAmount = double.Parse(outputResult.Text);  // Ensure this parsing is safe
             var splitMethod = outputStatus.Text;
 
-            var record = new BillsRecord
+            try
             {
-                DateRecorded = DateTime.Parse(selectdate),
-                PersonName = personName,
-                Description = description,
-                TotalAmount = totalAmount,
-                SplitMethod = splitMethod
-            };
+                var record = new BillsRecord
+                {
+                    DateRecorded = DateTime.ParseExact(selectdate, "dd/MM/yyyy", CultureInfo.InvariantCulture),
+                    PersonName = personName,
+                    Description = description,
+                    TotalAmount = totalAmount,
+                    SplitMethod = splitMethod
+                };
 
-            await firebaseHelper.AddRecord(record.DateRecorded, record.PersonName, record.Description, record.TotalAmount, record.SplitMethod);
-
-            await DisplayAlert("Record Saved", "Your bill has been saved successfully.", "OK");
+                await firebaseHelper.AddRecord(record.DateRecorded, record.PersonName, record.Description, record.TotalAmount, record.SplitMethod);
+                await DisplayAlert("Record Saved", "Your bill has been saved successfully.", "OK");
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", $"Failed to save record: {ex.Message}", "OK");
+            }
         }
 
-        private void OnAddExpenseClicked(object sender, EventArgs e)
+            private void OnAddExpenseClicked(object sender, EventArgs e)
         {
             string personName = inputPersonName.Text;
-            string splitName = inputSplitName.Text;
+            string description = inputSplitName.Text;
             double amount = double.TryParse(inputAmount.Text, out double result) ? result : 0;
             string splitMethod = pickerSplitMethod.SelectedItem.ToString();
 
-            DisplayAlert("Expense Added", $"Person: {personName}\nSplit: {splitName}\nAmount: RM{amount}\nMethod: {splitMethod}", "OK");
+            DisplayAlert("Expense Added", $"Person: {personName}\nDescription: {description}\nAmount: RM{amount}\nMethod: {splitMethod}", "OK");
         }
     }
 }
