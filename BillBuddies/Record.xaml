@@ -11,23 +11,23 @@
                VerticalTextAlignment="Center"/>-->
             <CollectionView x:Name="displayRecord" ItemsSource="{Binding DateRecorded}">
                 <CollectionView.Header>
-                    <Grid ColumnDefinitions="8* , 8* , 10* , 8*, 10*">
+                    <Grid ColumnDefinitions="10* , 8* , 10* , 8*, 10*">
                         <Label Grid.Column="0" Text="Date"  FontAttributes="Bold" Padding="5" BackgroundColor="Aquamarine"/>
                         <Label Grid.Column="1" Text="Name"  FontAttributes="Bold" Padding="5" BackgroundColor="Aquamarine"/>
                         <Label Grid.Column="2" Text="Description"  FontAttributes="Bold" Padding="5" BackgroundColor="Aquamarine"/>
                         <Label Grid.Column="3" Text="Total Amount"  FontAttributes="Bold" Padding="5" BackgroundColor="Aquamarine" />
-                        <Label Grid.Column="4" Text="Splitting Method"  FontAttributes="Bold" Padding="5" BackgroundColor="Aquamarine" />
+                        <Label Grid.Column="4" Text="Split Method"  FontAttributes="Bold" Padding="5" BackgroundColor="Aquamarine" />
                     </Grid>
                 </CollectionView.Header>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <SwipeView>
-                            <Grid ColumnDefinitions="8* , 8* , 10* , 10*, 10*">
+                            <Grid ColumnDefinitions="10* , 8* , 10* , 10*, 10*">
                                 <Label Grid.Column="0" Text="{Binding DateRecorded}"  />
                                 <Label Grid.Column="1" Text="{Binding PersonName}"  />
                                 <Label Grid.Column="2" Text="{Binding Description}"  />
                                 <Label Grid.Column="3" Text="{Binding TotalAmount}"  />
-                                <Label Grid.Column="4" Text="{Binding SplittingMethod}"  />
+                                <Label Grid.Column="4" Text="{Binding SplitMethod}"  />
                             </Grid>
                         </SwipeView>
                     </DataTemplate>

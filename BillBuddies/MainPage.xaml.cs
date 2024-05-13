@@ -98,10 +98,21 @@
             var selectdate = selectDate.Date.ToString("dd/MM/yyyy");
             var personName = inputPersonName.Text;
             var description = inputSplitName.Text;
-            var totalAmount = double.Parse(outputResult.Text);
+            var totalAmount = double.Parse(outputResult.Text);  // Ensure this parsing is safe
             var splitMethod = outputStatus.Text;
 
-            await DisplayAlert("Record Saved", "You bill has been saved", "OK");
+            var record = new BillsRecord
+            {
+                DateRecorded = DateTime.Parse(selectdate),
+                PersonName = personName,
+                Description = description,
+                TotalAmount = totalAmount,
+                SplitMethod = splitMethod
+            };
+
+            await firebaseHelper.AddRecord(record.DateRecorded, record.PersonName, record.Description, record.TotalAmount, record.SplitMethod);
+
+            await DisplayAlert("Record Saved", "Your bill has been saved successfully.", "OK");
         }
 
         private void OnAddExpenseClicked(object sender, EventArgs e)

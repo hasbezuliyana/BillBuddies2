@@ -3,10 +3,46 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BillBuddies.Information"
              Title="Information">
-    <VerticalStackLayout>
-        <Label 
-            Text="Information"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10">
+            <Label 
+                Text="App Features:"
+                FontAttributes="Bold"
+                FontSize="20"
+                VerticalOptions="Start" 
+                HorizontalOptions="Center" />
+            <Label 
+                Text="• Main Page:"
+                FontAttributes="Bold"
+                VerticalOptions="Start" />
+            <Label 
+                Text="Enables users to input necessary data for transactions."
+                VerticalOptions="Start"
+                Margin="20,0,0,0"/>
+            <Label 
+                Text="• Record:"
+                FontAttributes="Bold"
+                VerticalOptions="Start" />
+            <Label 
+                Text="Allows users to view saved transaction records."
+                VerticalOptions="Start"
+                Margin="20,0,0,0"/>
+            <Label 
+                Text="• Information:"
+                FontAttributes="Bold"
+                VerticalOptions="Start" />
+            <Label 
+                Text="Provides a manual guide for users."
+                VerticalOptions="Start"
+                Margin="20,0,0,0"/>
+            <Label 
+                Text="• About:"
+                FontAttributes="Bold"
+                VerticalOptions="Start" />
+            <Label 
+                Text="Contains information about the app and its developers."
+                VerticalOptions="Start"
+                Margin="20,0,0,0"/>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

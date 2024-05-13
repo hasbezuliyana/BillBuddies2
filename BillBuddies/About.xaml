@@ -4,26 +4,38 @@
              x:Class="BillBuddies.About"
              Title="About">
     <ScrollView>
-        <VerticalStackLayout Padding="30" Spacing="150">
-            <!-- Main Content -->
-            <StackLayout>
-                <Label Text="Bill Buddies is your go-to app for managing group finances, ensuring everyone stays informed about shared costs and balances during trips, group activities and outings."
-                       VerticalOptions="Start" 
-                       HorizontalOptions="FillAndExpand" 
-                       HorizontalTextAlignment="Center"/>
-            </StackLayout>
+        <VerticalStackLayout Padding="30" Spacing="10">
+            <!-- Main Content at the top -->
+            <Label 
+                Text="About Bill Buddies"
+                FontAttributes="Bold"
+                FontSize="24"
+                VerticalOptions="Start" 
+                HorizontalOptions="Center" />
 
-            <!-- Spacer that expands to push the footer to the bottom -->
-            <BoxView VerticalOptions="FillAndExpand" />
+            <Label 
+                Text="Bill Buddies is your go-to application for managing group finances. It ensures that all participants are updated about shared costs and balances during trips, group activities, and outings."
+                VerticalOptions="Start"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center" />
 
-            <!-- Footer -->
+            <!-- Large Spacer to push the footer at the bottom of the content -->
+            <BoxView BackgroundColor="Transparent" VerticalOptions="FillAndExpand" HeightRequest="400" />
+
+            <!-- Footer content -->
             <StackLayout VerticalOptions="End" HorizontalOptions="FillAndExpand">
-                <Label Text="Made by Hasbe Zuliyana SWD0181167"
-                       HorizontalTextAlignment="Center"/>
-                <Label Text="Copyright © 2024 Bill Buddies, Inc."
-                       HorizontalTextAlignment="Center"/>
-                <Label Text="Mobile Application Development"
-                       HorizontalTextAlignment="Center"/>
+                <Label 
+                    Text="Developed by Hasbe Zuliyana SW0181167"
+                    HorizontalTextAlignment="Center"
+                    FontAttributes="Bold"/>
+
+                <Label 
+                    Text="© 2024 Bill Buddies, Inc. All rights reserved."
+                    HorizontalTextAlignment="Center"/>
+
+                <Label 
+                    Text="Mobile Application Development"
+                    HorizontalTextAlignment="Center"/>
             </StackLayout>
         </VerticalStackLayout>
     </ScrollView>
